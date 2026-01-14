@@ -4,15 +4,16 @@ const playerNumbers = [];
 const matchingNumbers = []; 
 let points = 0;
 
-/* Random numbers */
+setTimeout(function () {
 console.log("Genero 5 numeri casuali");
-let number1 = 42;
+/* Random numbers */
+let number1 = getRandom(1, 50);
 let number2 = getRandom(1, 50);
 let number3 = getRandom(1, 50);
-let number4 = getRandom(1, 50);
+let number4 = 42;
 let number5 = getRandom(1, 50);
 extractedNumbers.push(number1, number2, number3, number4, number5); 
-console.table(extractedNumbers);
+console.table(extractedNumbers);;
 
 /* INPUT GIOCATORE */
 //TODO: DA SOSTITUIRE CON INPUT REALI
@@ -22,18 +23,16 @@ let playerInput3 = 16;
 let playerInput4 = 28; 
 let playerInput5 = 50; 
 playerNumbers.push(playerInput1, playerInput2, playerInput3, playerInput4, playerInput5);
+checkingNumbers()
+}, 1000)
 
-/* Validazione numeri giocatore e numeri estratti */
-for (let i = 0; i < playerNumbers.length; i++) {
-    currentPlayerNumber = playerNumbers[i]; 
-    if (extractedNumbers.includes(currentPlayerNumber)) {
-        console.log("lo vedo!");
-        matchingNumbers.push(currentPlayerNumber); 
-        points++
-    }
-}
 
-console.log("Hai indovinato:", matchingNumbers);
+
+
+
+
+
+
 
 /* Funzioni */
 /**
@@ -44,4 +43,18 @@ console.log("Hai indovinato:", matchingNumbers);
  */
 function getRandom (min, max) {
     return Math.floor(Math.random() * (max -min + 1) + min)
+}
+
+/**
+ * This function allows you to check if the player numbers are included in random generated numbers array
+ */
+function checkingNumbers () {
+for (let i = 0; i < playerNumbers.length; i++) {
+    currentPlayerNumber = playerNumbers[i]; 
+    if (extractedNumbers.includes(currentPlayerNumber)) {
+        matchingNumbers.push(currentPlayerNumber); 
+        points++
+        console.log(points);
+    } 
+} 
 }
