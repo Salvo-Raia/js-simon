@@ -4,7 +4,6 @@ let tenSeconds = oneSecond * 10;
 let secondsLeft = 11;
 const countdown = document.getElementById("countdown");
 
-
 /* Array numeri estratti, array giocatore e punti totalizzati */
 const extractedNumbers = [];
 const playerNumbers = [];
@@ -93,10 +92,11 @@ function getRandom (min, max) {
  * This function allows you to check if the player numbers are included in random generated numbers array
  */
 function checkingNumbers () {
-for (let i = 0; i < playerNumbers.length; i++) {
-    currentPlayerNumber = (playerNumbers[i]); 
-    if (extractedNumbers.includes(currentPlayerNumber)) {
-        matchingNumbers.push(currentPlayerNumber); 
+for (let i = 0; i < extractedNumbers.length; i++) {
+    let currentExtractedNumber = (extractedNumbers[i]); 
+    if (playerNumbers.includes(currentExtractedNumber)) {
+        matchingNumbers.push(currentExtractedNumber);
+        extractedNumbers.pop(currentExtractedNumber[i]); 
         points++
     } 
 } 
