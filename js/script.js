@@ -4,34 +4,36 @@ const playerNumbers = [];
 const matchingNumbers = []; 
 let points = 0;
 
-setTimeout(function () {
-console.log("Genero 5 numeri casuali");
+/* Player inputs */
+let playerInput1 = document.getElementById("player-input1");
+let playerInput2 = document.getElementById("player-input2");
+let playerInput3 = document.getElementById("player-input3");
+let playerInput4 = document.getElementById("player-input4");
+let playerInput5 = document.getElementById("player-input5");
+const playerValidation = document.getElementById("answers-form");
+
 /* Random numbers */
-let number1 = getRandom(1, 50);
+let number1 = 42;
 let number2 = getRandom(1, 50);
 let number3 = getRandom(1, 50);
-let number4 = 42;
+let number4 = getRandom(1, 50);
 let number5 = getRandom(1, 50);
 extractedNumbers.push(number1, number2, number3, number4, number5); 
 console.table(extractedNumbers);;
 
-/* INPUT GIOCATORE */
-//TODO: DA SOSTITUIRE CON INPUT REALI
-let playerInput1 = 42; 
-let playerInput2 = 11; 
-let playerInput3 = 16; 
-let playerInput4 = 28; 
-let playerInput5 = 50; 
-playerNumbers.push(playerInput1, playerInput2, playerInput3, playerInput4, playerInput5);
+playerValidation.addEventListener("submit", function (event) {
+event.preventDefault();
+playerNumbers.push(
+   parseInt((playerInput1.value)),
+   parseInt((playerInput2.value)), 
+   parseInt((playerInput3.value)), 
+   parseInt((playerInput4.value)), 
+   parseInt((playerInput5.value)));
+console.table(playerNumbers)
 checkingNumbers()
-}, 1000)
+console.log(typeof playerNumbers [0]);
 
-
-
-
-
-
-
+})
 
 
 /* Funzioni */
@@ -50,7 +52,7 @@ function getRandom (min, max) {
  */
 function checkingNumbers () {
 for (let i = 0; i < playerNumbers.length; i++) {
-    currentPlayerNumber = playerNumbers[i]; 
+    currentPlayerNumber = (playerNumbers[i]); 
     if (extractedNumbers.includes(currentPlayerNumber)) {
         matchingNumbers.push(currentPlayerNumber); 
         points++
