@@ -1,13 +1,12 @@
 /* Clock control */
 let oneSecond = 1000; 
-let tenSeconds = oneSecond * 10;
-let secondsLeft = 11;
+let secondsLeft = 10;
 const countdown = document.getElementById("countdown");
 
 /* Array numeri estratti, array giocatore e punti totalizzati */
 const extractedNumbers = [];
 const playerNumbers = [];
-const matchingNumbers = []; 
+const matchingNumbers = [];
 let points = 0;
 const results = document.getElementById("results");
 
@@ -39,7 +38,6 @@ randomGeneratedNumbers.innerHTML = `
 <li>${number4}</li>
 <li>${number5}</li>
 `
-
 /* Countdown all'inizio del gioco */
 let counter = setInterval(function () {
     secondsLeft--; 
@@ -50,21 +48,21 @@ let counter = setInterval(function () {
     playerValidation.classList.remove("d-none");
     countdown.innerText = "Tocca a te"
     instructions.innerText = "Scrivi le tue risposte!"
-    avatar.src="./img/Guess.png"; 
-}
+    avatar.src="./img/Guess.png";}
 }, oneSecond); 
 
 /* Invio input per Validazione numeri giocatore */
 playerValidation.addEventListener("submit", function (event) {
-event.preventDefault();
+event.preventDefault();    
+playerInput1.classList.remove("bg-danger")
 playerNumbers.push(
-   parseInt((playerInput1.value)),
-   parseInt((playerInput2.value)), 
-   parseInt((playerInput3.value)), 
-   parseInt((playerInput4.value)), 
-   parseInt((playerInput5.value)));
-console.table(playerNumbers)
+playerInput1.valueAsNumber,
+playerInput2.valueAsNumber, 
+playerInput3.valueAsNumber, 
+playerInput4.valueAsNumber, 
+playerInput5.valueAsNumber);
 checkingNumbers();
+console.table(playerNumbers);
 playerInput1.value = "";
 playerInput2.value = "";
 playerInput3.value = "";
@@ -73,11 +71,11 @@ playerInput5.value = "";
 points = 0; 
 /* Svuoto gli array per non far cumulare punti anche dopo input post-partita */
 playerNumbers.splice(0,5);
-extractedNumbers.splice(0,5);
-console.table(playerNumbers);
-})
-
-/* Funzioni */
+extractedNumbers.splice(0,5); 
+}
+)
+    
+    /* Funzioni */
 /**
  * This function allows you yo generate a random number (min and max values included)
  * @param {number} min the minimum random number to generate.
