@@ -13,13 +13,30 @@ let playerInput5 = document.getElementById("player-input5");
 const playerValidation = document.getElementById("answers-form");
 
 /* Random numbers */
-let number1 = 42;
+let number1 = getRandom(1, 50);
 let number2 = getRandom(1, 50);
 let number3 = getRandom(1, 50);
 let number4 = getRandom(1, 50);
 let number5 = getRandom(1, 50);
 extractedNumbers.push(number1, number2, number3, number4, number5); 
 console.table(extractedNumbers);;
+
+/* DOM Elements */
+const randomGeneratedNumbers = document.getElementById("numbers-list");
+randomGeneratedNumbers.innerHTML = `
+<li>${number1}</li>
+<li>${number2}</li>
+<li>${number3}</li>
+<li>${number4}</li>
+<li>${number5}</li>
+`
+
+
+setTimeout(function () {
+    console.log("Ready!")
+    randomGeneratedNumbers.classList.add("d-none")
+    playerValidation.classList.remove("d-none");
+}, 3000); 
 
 playerValidation.addEventListener("submit", function (event) {
 event.preventDefault();
@@ -54,6 +71,7 @@ function checkingNumbers () {
 for (let i = 0; i < playerNumbers.length; i++) {
     currentPlayerNumber = (playerNumbers[i]); 
     if (extractedNumbers.includes(currentPlayerNumber)) {
+        // TODO: Magari evito un altro array solo per far vedere quali ha indovinato il giocatore
         matchingNumbers.push(currentPlayerNumber); 
         points++
         console.log(points);
