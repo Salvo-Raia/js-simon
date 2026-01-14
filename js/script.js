@@ -1,8 +1,10 @@
 /* Clock control */
 let oneSecond = 1000; 
 let tenSeconds = oneSecond * 10;
-let secondsLeft = 10;
-const countdown = document.getElementById("countdown")
+let secondsLeft = 3; //TODO: cambiare in 10 
+const countdown = document.getElementById("countdown");
+const instructions = document.getElementById("instructions");
+const results = document.getElementById("results");
 
 /* Array numeri estratti, array giocatore e punti totalizzati */
 const extractedNumbers = [];
@@ -47,11 +49,9 @@ let counter = setInterval(function () {
     randomGeneratedNumbers.classList.add("d-none")
     playerValidation.classList.remove("d-none");
     countdown.classList.add("d-none")
+    instructions.innerText = "Scrivi le tue risposte!"
 }
 }, oneSecond); 
-
-
-
 
 /* Invio input per Validazione numeri giocatore */
 playerValidation.addEventListener("submit", function (event) {
@@ -65,7 +65,6 @@ playerNumbers.push(
 console.table(playerNumbers)
 checkingNumbers()
 console.log(typeof playerNumbers [0]);
-
 })
 
 /* Funzioni */
@@ -89,7 +88,16 @@ for (let i = 0; i < playerNumbers.length; i++) {
         // TODO: Magari evito un altro array solo per far vedere quali ha indovinato il giocatore
         matchingNumbers.push(currentPlayerNumber); 
         points++
-        console.log(points);
     } 
 } 
+
+if (points === 0) {
+    results.innerText = "Che sfortuna, non ne hai beccato uno!"
+} else if (points == 1) {
+    results.innerHTML = `Hai totalizzato ${points} punto`
+} else if (points == 5) {
+    results.innerHTML = `Che fenomeno! Li hai ricordati tutti`
+} else {
+    results.innerHTML = `Hai totalizzato ${points} punti`
+}
 }
