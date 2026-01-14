@@ -1,7 +1,10 @@
-/* Random numbers */
+/* Array numeri estratti, array giocatore e punti totalizzati */
 const extractedNumbers = [];
 const playerNumbers = [];
+const matchingNumbers = []; 
 let points = 0;
+
+/* Random numbers */
 console.log("Genero 5 numeri casuali");
 let number1 = 42;
 let number2 = getRandom(1, 50);
@@ -25,9 +28,12 @@ for (let i = 0; i < playerNumbers.length; i++) {
     currentPlayerNumber = playerNumbers[i]; 
     if (extractedNumbers.includes(currentPlayerNumber)) {
         console.log("lo vedo!");
+        matchingNumbers.push(currentPlayerNumber); 
         points++
     }
 }
+
+console.log("Hai indovinato:", matchingNumbers);
 
 /* Funzioni */
 /**
