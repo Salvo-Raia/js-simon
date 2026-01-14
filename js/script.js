@@ -1,6 +1,6 @@
 /* Clock control */
 let oneSecond = 1000; 
-let secondsLeft = 1;
+let secondsLeft = 4;
 const countdown = document.getElementById("countdown");
 
 /* Array numeri estratti, array giocatore e punti totalizzati */
@@ -10,7 +10,7 @@ const matchingNumbers = [];
 let points = 0;
 const results = document.getElementById("results");
 
-/* Player inputs */
+/* Inputs */
 let playerInputs = document.querySelectorAll(".form-control")
 const playerValidation = document.getElementById("answers-form");
 
@@ -18,7 +18,6 @@ const playerValidation = document.getElementById("answers-form");
 for (let i = 0; i < 5; i++) {
     extractedNumbers.push(getRandom(1,50))
 }
-console.log("Numeri PC");
 console.table(extractedNumbers);;
 
 /* DOM Elements */
@@ -42,14 +41,13 @@ let counter = setInterval(function () {
     avatar.src="./img/Guess.png";}
 }, oneSecond); 
 
-/* Invio input per Validazione numeri giocatore */
+/* Invio input per validazione numeri giocatore */
 playerValidation.addEventListener("submit", function (event) {
 event.preventDefault();    
 for (let i = 0; i < 5; i++) {
     playerSingleInput = playerInputs[i].valueAsNumber; 
     playerNumbers.push(playerSingleInput);
 }
-console.log("Numeri giocatore");
 console.table(playerNumbers);
 checkingNumbers();
 points = 0; 

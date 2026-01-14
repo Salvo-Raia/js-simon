@@ -1,6 +1,6 @@
 /* Generics */
 body {
-	background-color: rgb(80, 35, 185);
+	background-image: linear-gradient(to bottom, rgb(137, 39, 202), rgb(100, 90, 241));
 }
 
 /* # COUNTDOWN */
@@ -22,7 +22,6 @@ input {
 	width: 400px;
 	border: 3px solid white;
 	border-radius: 50%;
-	transition: all 0.2 linear;
 }
 
 .hidden {
