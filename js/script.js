@@ -1,3 +1,9 @@
+/* Clock control */
+let oneSecond = 1000; 
+let tenSeconds = oneSecond * 10;
+let secondsLeft = 10;
+const countdown = document.getElementById("countdown")
+
 /* Array numeri estratti, array giocatore e punti totalizzati */
 const extractedNumbers = [];
 const playerNumbers = [];
@@ -31,13 +37,23 @@ randomGeneratedNumbers.innerHTML = `
 <li>${number5}</li>
 `
 
-
-setTimeout(function () {
-    console.log("Ready!")
+/* Countdown all'inizio del gioco */
+let counter = setInterval(function () {
+    console.log("Ready!");
+    secondsLeft--; 
+    countdown.innerHTML=`${secondsLeft}`
+    if (secondsLeft === 0) {
+    clearInterval(counter);
     randomGeneratedNumbers.classList.add("d-none")
     playerValidation.classList.remove("d-none");
-}, 3000); 
+    countdown.classList.add("d-none")
+}
+}, oneSecond); 
 
+
+
+
+/* Invio input per Validazione numeri giocatore */
 playerValidation.addEventListener("submit", function (event) {
 event.preventDefault();
 playerNumbers.push(
@@ -51,7 +67,6 @@ checkingNumbers()
 console.log(typeof playerNumbers [0]);
 
 })
-
 
 /* Funzioni */
 /**
