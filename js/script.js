@@ -11,17 +11,14 @@ let points = 0;
 const results = document.getElementById("results");
 
 /* Player inputs */
-let playerInput1 = document.getElementById("player-input1");
-let playerInput2 = document.getElementById("player-input2");
-let playerInput3 = document.getElementById("player-input3");
-let playerInput4 = document.getElementById("player-input4");
-let playerInput5 = document.getElementById("player-input5");
+let playerInputs = document.querySelectorAll(".form-control")
 const playerValidation = document.getElementById("answers-form");
 
 /* Random numbers */
 for (let i = 0; i < 5; i++) {
     extractedNumbers.push(getRandom(1,50))
 }
+console.log("Numeri PC");
 console.table(extractedNumbers);;
 
 /* DOM Elements */
@@ -31,6 +28,7 @@ const randomGeneratedNumbers = document.getElementById("numbers-list");
 for (let i = 0; i < 5; i++) {
     randomGeneratedNumbers.innerHTML += `<li>${extractedNumbers[i]}</li>`
 }
+
 /* Countdown all'inizio del gioco */
 let counter = setInterval(function () {
     secondsLeft--; 
@@ -47,22 +45,17 @@ let counter = setInterval(function () {
 /* Invio input per Validazione numeri giocatore */
 playerValidation.addEventListener("submit", function (event) {
 event.preventDefault();    
-playerInput1.classList.remove("bg-danger")
-playerNumbers.push(
-playerInput1.valueAsNumber,
-playerInput2.valueAsNumber, 
-playerInput3.valueAsNumber, 
-playerInput4.valueAsNumber, 
-playerInput5.valueAsNumber);
-checkingNumbers();
+for (let i = 0; i < 5; i++) {
+    playerSingleInput = playerInputs[i].valueAsNumber; 
+    playerNumbers.push(playerSingleInput);
+}
+console.log("Numeri giocatore");
 console.table(playerNumbers);
-playerInput1.value = "";
-playerInput2.value = "";
-playerInput3.value = "";
-playerInput4.value = "";
-playerInput5.value = "";
+checkingNumbers();
 points = 0; 
-/* Svuoto gli array per non far cumulare punti anche dopo input post-partita */
+for (let i = 0; i < 5; i++) {
+    playerInputs[i].value = ""; 
+}
 playerNumbers.splice(0,5);
 extractedNumbers.splice(0,5); 
 }
@@ -87,7 +80,7 @@ for (let i = 0; i < extractedNumbers.length; i++) {
     let currentExtractedNumber = (extractedNumbers[i]); 
     if (playerNumbers.includes(currentExtractedNumber)) {
         matchingNumbers.push(currentExtractedNumber);
-        extractedNumbers.pop(currentExtractedNumber[i]); 
+        extractedNumbers.splice(currentExtractedNumber[i],0); 
         points++
     } 
 } 
