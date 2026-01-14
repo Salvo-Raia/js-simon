@@ -11,17 +11,21 @@
   crossorigin='anonymous' />
   <!-- Custom stylesheet -->
   <link rel="stylesheet" href="css/style.css" type="text/css" />
-  <title>Document</title>
+  <title>Artur Says</title>
 </head>
 
 <body>
-  <div class="d-flex vh-100 w-50 m-auto d-flex justify-content-center align-items-center flex-column">
-    <!-- Countdown -->
-    <div id="countdown" class="fs-1 fw-bolder"></div>
-    <p id="instructions">Memorizza i numeri entro il tempo limite!</p>
 
+  <div class="d-flex vh-100 w-50 m-auto d-flex justify-content-center align-items-center flex-column gap-2">
+    <h1 class="fs-1 text-white">The Astonishing Artur says...</h1>
+    <!-- Countdown -->
+    <div id="countdown" class="text-center text-white fs-1 fw-bolder">Si inizia tra...</div>
+    <span id="results" class="text-center text-white fs-1"></span>
+        <img id="artur-avatar" src="./img/Artur Says.png" alt="Artur Says">
+      <p id="instructions" class="fs-3 text-white text-center">Memorizza i numeri entro il tempo limite!</p>
+      <p class="text-danger text-center" id="message"></p>
     <!-- Numbers -->
-    <ul id="numbers-list" class="d-flex gap-5 list-unstyled"></ul>
+    <ul id="numbers-list" class="d-flex gap-5 list-unstyled text-white"></ul>
 
     <!-- Form -->
     <form id="answers-form" class="d-none">
@@ -32,13 +36,12 @@
         <input id="player-input4" type="number" class="form-control" min="1" max="50" required>
         <input id="player-input5" type="number" class="form-control" min="1" max="50" required>
       </div>
-      <button class="btn btn-primary mt-2 d-block mx-auto">Conferma</button>
-      <p class="text-danger text-center" id="message"></p>
+      <button class="btn btn-success mt-2 d-block mx-auto mt-3">Conferma</button>
+      
     </form>
-    <div>
-      <span id="results" class="text-center fs-3"></span>
-    </div>
+    
   </div>
+
 
   <!-- Scripts -->
   <script src="js/script.js"></script>

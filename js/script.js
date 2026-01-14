@@ -1,16 +1,16 @@
 /* Clock control */
 let oneSecond = 1000; 
 let tenSeconds = oneSecond * 10;
-let secondsLeft = 3; //TODO: cambiare in 10 
+let secondsLeft = 11;
 const countdown = document.getElementById("countdown");
-const instructions = document.getElementById("instructions");
-const results = document.getElementById("results");
+
 
 /* Array numeri estratti, array giocatore e punti totalizzati */
 const extractedNumbers = [];
 const playerNumbers = [];
 const matchingNumbers = []; 
 let points = 0;
+const results = document.getElementById("results");
 
 /* Player inputs */
 let playerInput1 = document.getElementById("player-input1");
@@ -30,6 +30,8 @@ extractedNumbers.push(number1, number2, number3, number4, number5);
 console.table(extractedNumbers);;
 
 /* DOM Elements */
+const instructions = document.getElementById("instructions");
+const avatar = document.getElementById("artur-avatar");
 const randomGeneratedNumbers = document.getElementById("numbers-list");
 randomGeneratedNumbers.innerHTML = `
 <li>${number1}</li>
@@ -41,15 +43,15 @@ randomGeneratedNumbers.innerHTML = `
 
 /* Countdown all'inizio del gioco */
 let counter = setInterval(function () {
-    console.log("Ready!");
     secondsLeft--; 
-    countdown.innerHTML=`${secondsLeft}`
+    countdown.innerHTML=`⏳ ${secondsLeft}...`
     if (secondsLeft === 0) {
     clearInterval(counter);
     randomGeneratedNumbers.classList.add("d-none")
     playerValidation.classList.remove("d-none");
-    countdown.classList.add("d-none")
+    countdown.innerText = "Tocca a te"
     instructions.innerText = "Scrivi le tue risposte!"
+    avatar.src="./img/Guess.png"; 
 }
 }, oneSecond); 
 
@@ -63,8 +65,17 @@ playerNumbers.push(
    parseInt((playerInput4.value)), 
    parseInt((playerInput5.value)));
 console.table(playerNumbers)
-checkingNumbers()
-console.log(typeof playerNumbers [0]);
+checkingNumbers();
+playerInput1.value = "";
+playerInput2.value = "";
+playerInput3.value = "";
+playerInput4.value = "";
+playerInput5.value = "";
+points = 0; 
+/* Svuoto gli array per non far cumulare punti anche dopo input post-partita */
+playerNumbers.splice(0,5);
+extractedNumbers.splice(0,5);
+console.table(playerNumbers);
 })
 
 /* Funzioni */
@@ -85,19 +96,30 @@ function checkingNumbers () {
 for (let i = 0; i < playerNumbers.length; i++) {
     currentPlayerNumber = (playerNumbers[i]); 
     if (extractedNumbers.includes(currentPlayerNumber)) {
-        // TODO: Magari evito un altro array solo per far vedere quali ha indovinato il giocatore
         matchingNumbers.push(currentPlayerNumber); 
         points++
     } 
 } 
 
 if (points === 0) {
+    avatar.src="./img/Lose.png"; 
     results.innerText = "Che sfortuna, non ne hai beccato uno!"
+    instructions.innerText = "Ricarica la pagina con F5 per riprovare!"
+    countdown.classList.add("d-none")
 } else if (points == 1) {
-    results.innerHTML = `Hai totalizzato ${points} punto`
+    avatar.src="./img/NotBad.png"; 
+    results.innerHTML = `Hai totalizzato ${points} punto!`
+    instructions.innerText = `Numero indovinato: ${matchingNumbers}`
+    countdown.classList.add("d-none")
 } else if (points == 5) {
-    results.innerHTML = `Che fenomeno! Li hai ricordati tutti`
+    avatar.src="./img/5o5.png"; 
+    results.innerHTML = `Che fenomeno! Li hai ricordati tutti!`
+    instructions.innerText = `${matchingNumbers.join(", ")}`
+    countdown.classList.add("d-none")
 } else {
-    results.innerHTML = `Hai totalizzato ${points} punti`
+    avatar.src="./img/Ok.png"; 
+    results.innerHTML = `Hai totalizzato ${points} punti!`
+    instructions.innerText = `Numeri indovinati: ${matchingNumbers.join(", ")}`
+    countdown.classList.add("d-none")
 }
 }
