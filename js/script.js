@@ -1,6 +1,9 @@
 /* Music */
 const audio = document.getElementById("music"); 
 audio.autoplay
+window.addEventListener("click", () => {
+  audio.play();
+});
 
 /* Clock control */
 let oneSecond = 1000; 
