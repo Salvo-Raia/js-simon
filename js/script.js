@@ -1,6 +1,10 @@
+/* Music */
+const audio = document.getElementById("music"); 
+audio.autoplay
+
 /* Clock control */
 let oneSecond = 1000; 
-let secondsLeft = 4;
+let secondsLeft = 11;
 const countdown = document.getElementById("countdown");
 
 /* Array numeri estratti, array giocatore e punti totalizzati */
