@@ -1,24 +1,64 @@
-# Esercizio di oggi: Simon Says 
-Nome repo: `js-simon`
+![Boolean Tech Academy](https://img.shields.io/badge/Boolean_Tech_Academy-001632?style=for-the-badge)
 
-## Consegna: 
-Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi. Dopo 30 secondi i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire i numeri che ha visto precedentemente, nell'ordine che preferisce.
+# 🎓 Exercise 26/50 - Simon Says
 
-Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+## 📌 Project Overview
 
-**NOTA:** 
-Non è importante l'ordine con cui l'utente inserisce i numeri, basta che ne indovini il più possibile.
+| Property | Details |
+|:--|:--|
+| Repository | `js-simon` |
+| Category | Boolean Tech Academy |
+| Type | Exercise |
+| Exercise | 26/50 |
 
-**BONUS:**
+## 🎯 Assignment
 
-Inseriamo la validazione: se l'utente mette due numeri uguali o inserisce cose diverse da numeri lo blocchiamo in qualche modo.
-Se l’utente ha inserito qualcosa di non valido, segnaliamolo visivamente nel form.
+Create a **Simon Says** memory game.
 
-**Consigli del giorno**
+The program must initially display **5 random numbers** on the page. A 30-second timer starts as soon as the numbers appear.
 
-* Pensate prima in italiano.
-* Dividete in piccoli problemi la consegna.
-* Individuate gli elementi di cui avete bisogno per realizzare il programma.
-* Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali e quanti numeri ci sono in comune tra i due array"
+After 30 seconds, the numbers disappear and are replaced by **5 input fields**, where the user must enter the numbers they remember seeing.
 
-PS. Dimenticavo! Il DOM è già pronto 😎  basta trovare e recuperare gli elementi giusti!
+The order in which the numbers are entered does not matter.
+
+Once all 5 numbers have been submitted, the program must display how many and which of the original numbers the user successfully remembered.
+
+### ⭐ Bonus: Input Validation
+
+Add input validation to prevent the user from:
+
+- Entering the same number more than once.
+- Entering values that are not numbers.
+
+If the user enters invalid data, prevent the submission and provide visual feedback directly in the form.
+
+## 💡 Tips
+
+Before writing any code:
+
+- Think through the solution in Italian.
+- Break the assignment down into smaller problems.
+- Identify the HTML elements needed to implement the program.
+- Think of the main logic as a simple array problem:
+
+Given two arrays of numbers, determine which numbers they have in common and how many matches there are.
+
+**PS:** The DOM is already prepared! 😎 You only need to find and retrieve the correct elements.
+
+## 🛠️ Technologies
+
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+
+## 💡 What I Learned
+
+- Selecting and manipulating DOM elements.
+- Generating random numbers.
+- Working with arrays and comparing their contents.
+- Using timers with `setTimeout()`.
+- Retrieving and validating user input.
+- Comparing two arrays to identify matching values.
+- Providing visual feedback based on user input.
+
+## ©️ Credits
+
+Exercise assigned by **Boolean Tech Academy** as part of the Web Development course - Class 152 - Year 2025-2026
