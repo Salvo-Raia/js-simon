@@ -1,6 +1,8 @@
-![Boolean Tech Academy](https://img.shields.io/badge/Boolean_Tech_Academy-001632?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/Boolean_Tech_Academy-1565C0?style=for-the-badge)
 
-# 🎓 Exercise 26/50 - Simon Says
+# 🎓 Exercise 26/50: Simon Says
+
+Creating a JavaScript memory game that generates random numbers, uses a countdown timer, and checks user input against the original sequence, with input validation and DOM manipulation.
 
 ## 📌 Project Overview
 
@@ -23,7 +25,20 @@ The order in which the numbers are entered does not matter.
 
 Once all 5 numbers have been submitted, the program must display how many and which of the original numbers the user successfully remembered.
 
-### ⭐ Bonus: Input Validation
+### 🔎 Notes
+
+Before writing any code:
+
+- Think through the solution in plain language.
+- Break the assignment down into smaller problems.
+- Identify the HTML elements needed to implement the program.
+- Think of the main logic as a simple array problem:
+
+Given two arrays of numbers, determine which numbers they have in common and how many matches there are.
+
+The DOM is already prepared! You only need to find and retrieve the correct elements. But you can customize the style, if you want.
+
+### ⭐ Bonus
 
 Add input validation to prevent the user from:
 
@@ -31,19 +46,6 @@ Add input validation to prevent the user from:
 - Entering values that are not numbers.
 
 If the user enters invalid data, prevent the submission and provide visual feedback directly in the form.
-
-## 💡 Tips
-
-Before writing any code:
-
-- Think through the solution in Italian.
-- Break the assignment down into smaller problems.
-- Identify the HTML elements needed to implement the program.
-- Think of the main logic as a simple array problem:
-
-Given two arrays of numbers, determine which numbers they have in common and how many matches there are.
-
-**PS:** The DOM is already prepared! 😎 You only need to find and retrieve the correct elements.
 
 ## 🛠️ Technologies
 
@@ -61,4 +63,4 @@ Given two arrays of numbers, determine which numbers they have in common and how
 
 ## ©️ Credits
 
-Exercise assigned by **Boolean Tech Academy** as part of the Web Development course - Class 152 - Year 2025-2026
+Exercise assigned by **Boolean Tech Academy** as part of the Web Development course (Class 152, A.Y. 2025–2026).
