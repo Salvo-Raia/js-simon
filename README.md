@@ -1,19 +1,16 @@
 ![Static Badge](https://img.shields.io/badge/Boolean_Tech_Academy-1565C0?style=for-the-badge)
 
-# 🎓 Exercise 26/50: Simon Says
+# Exercise 26/50: Simon Says
 
 Creating a JavaScript memory game that generates random numbers, uses a countdown timer, and checks user input against the original sequence, with input validation and DOM manipulation.
 
-## 📌 Project Overview
+## Project overview
 
-| Property | Details |
-|:--|:--|
-| Repository | `js-simon` |
-| Category | Boolean Tech Academy |
-| Type | Exercise |
-| Exercise | 26/50 |
+| Repository | Project | Category | Main Focus | Exercise |
+|:--|:--|:--|:--|:--|
+| js-simon | Simon Says | Exercise | JavaScript Arrays, Timers & DOM manipulation | 26/50 |
 
-## 🎯 Assignment
+## Assignment
 
 Create a **Simon Says** memory game.
 
@@ -25,7 +22,16 @@ The order in which the numbers are entered does not matter.
 
 Once all 5 numbers have been submitted, the program must display how many and which of the original numbers the user successfully remembered.
 
-### 🔎 Notes
+#### Bonus challenge
+
+Add input validation to prevent the user from:
+
+- Entering the same number more than once.
+- Entering values that are not numbers.
+
+If the user enters invalid data, prevent the submission and provide visual feedback directly in the form.
+
+##### Notes
 
 Before writing any code:
 
@@ -38,20 +44,11 @@ Given two arrays of numbers, determine which numbers they have in common and how
 
 The DOM is already prepared! You only need to find and retrieve the correct elements. But you can customize the style, if you want.
 
-### ⭐ Bonus
-
-Add input validation to prevent the user from:
-
-- Entering the same number more than once.
-- Entering values that are not numbers.
-
-If the user enters invalid data, prevent the submission and provide visual feedback directly in the form.
-
-## 🛠️ Technologies
+## Technologies
 
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
-## 💡 What I Learned
+## What I learned
 
 - Selecting and manipulating DOM elements.
 - Generating random numbers.
@@ -61,6 +58,6 @@ If the user enters invalid data, prevent the submission and provide visual feedb
 - Comparing two arrays to identify matching values.
 - Providing visual feedback based on user input.
 
-## ©️ Credits
+## Credits
 
-Exercise assigned by **Boolean Tech Academy** as part of the Web Development course (Class 152, A.Y. 2025–2026).
+Exercise assigned by **Boolean Tech Academy** as part of the Web Development course (Class 152, A.Y. 2025-2026).
