@@ -8,7 +8,7 @@ Creating a JavaScript memory game that generates random numbers, uses a countdow
 
 | Repository | Project | Category | Main Focus | Exercise |
 |:--|:--|:--|:--|:--|
-| js-simon | Simon Says | Exercise | JavaScript Arrays, Timers & DOM manipulation | 26/50 |
+| js-simon | Simon Says | Exercise | JavaScript arrays, timers & DOM manipulation | 26/50 |
 
 ## Assignment
 
@@ -35,10 +35,10 @@ If the user enters invalid data, prevent the submission and provide visual feedb
 
 Before writing any code:
 
-- Think through the solution in plain language.
-- Break the assignment down into smaller problems.
-- Identify the HTML elements needed to implement the program.
-- Think of the main logic as a simple array problem:
+1. Think through the solution in plain language.
+2. Break the assignment down into smaller problems.
+3. Identify the HTML elements needed to implement the program.
+4. Think of the main logic as a simple array problem:
 
 Given two arrays of numbers, determine which numbers they have in common and how many matches there are.
 
@@ -46,7 +46,9 @@ The DOM is already prepared! You only need to find and retrieve the correct elem
 
 ## Technologies
 
-![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white) 
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css&logoColor=white) 
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 ## What I learned
 
