@@ -8,7 +8,7 @@ Creating a JavaScript memory game that generates random numbers, uses a countdow
 
 | Repository | Project | Category | Main Focus | Exercise |
 |:--|:--|:--|:--|:--|
-| js-simon | Simon Says | Exercise | JavaScript, arrays, timers & DOM manipulation | 26/50 |
+| js-simon | Simon Says | Exercise | JavaScript, arrays, timers, DOM manipulation | 26/50 |
 
 ## Assignment
 
@@ -23,6 +23,8 @@ The order in which the numbers are entered does not matter.
 Once all 5 numbers have been submitted, the program must display how many and which of the original numbers the user successfully remembered.
 
 #### Bonus challenge
+
+Try to implement the following additional improvements.
 
 Add input validation to prevent the user from:
 
