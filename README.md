@@ -8,7 +8,7 @@ Creating a JavaScript memory game that generates random numbers, uses a countdow
 
 | Repository | Project | Category | Main Focus | Exercise |
 |:--|:--|:--|:--|:--|
-| js-simon | Simon Says | Exercise | JavaScript arrays, timers & DOM manipulation | 26/50 |
+| js-simon | Simon Says | Exercise | JavaScript, arrays, timers & DOM manipulation | 26/50 |
 
 ## Assignment
 
